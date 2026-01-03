@@ -3,15 +3,15 @@ from bs4 import BeautifulSoup
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
-SPOTIFY_USER_NAME = "MY_USERNAME"
-CLIENT_ID = "your_spotify_client_id"
-CLIENT_SECRET = "your_spotify_client_Secret"
-scope = "user-library-read"
 year = input("What year do you want to travel to? Type the Year in this formate. YYYY: ")
-
 URL = f"https://www.billboard.com/charts/year-end/{year}/hot-100-songs/"
 HEADERS = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
                          'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'}
+
+SPOTIFY_USER_NAME = "MY_USERNAME"
+CLIENT_ID = "your_spotify_client_id"
+CLIENT_SECRET = "your_spotify_client_Secret"
+SCOPE = "user-library-read"
 
 sp = spotipy.Spotify(
     auth_manager=SpotifyOAuth(
