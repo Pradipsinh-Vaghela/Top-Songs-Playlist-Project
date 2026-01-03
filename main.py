@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
-Spotifyusername = "MY_USERNAME"
+SPOTIFY_USER_NAME = "MY_USERNAME"
 CLIENT_ID = "your_spotify_client_id"
 CLIENT_SECRET = "your_spotify_client_Secret"
 scope = "user-library-read"
@@ -21,7 +21,7 @@ sp = spotipy.Spotify(
         client_secret=CLIENT_SECRET,
         show_dialog=True,
         cache_path="token.txt",
-        username=Spotifyusername,
+        username=SPOTIFY_USER_NAME,
     )
 )
 
@@ -47,7 +47,7 @@ for song in song_titles:
 playlist_name = f"Billboard Hot 100 - {year}"
 description = "Top 100 songs on Billboard charts for the specified year."
 
-playlist = sp.user_playlist_create(user=Spotifyusername,
+playlist = sp.user_playlist_create(user=SPOTIFY_USER_NAME,
                                    name=playlist_name,
                                    description=description,
                                    public=False)
